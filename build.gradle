@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'marcosg.pucmm.edu'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    compile 'io.javalin:javalin:3.13.7'
+    implementation group: 'org.webjars', name: 'bootstrap', version: '5.0.1'
+}
+
+test {
+    useJUnitPlatform()
+}
