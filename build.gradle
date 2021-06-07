@@ -1,19 +1,23 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'marcosg.pucmm.edu'
 version '1.0-SNAPSHOT'
+
+mainClassName = 'marcosg.pucmm.edu.Main'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation 'io.javalin:javalin:3.13.7'
+    implementation group: 'org.webjars', name: 'bootstrap', version: '5.0.1'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    compile 'io.javalin:javalin:3.13.7'
-    implementation group: 'org.webjars', name: 'bootstrap', version: '5.0.1'
 }
 
 test {
