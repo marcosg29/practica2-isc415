@@ -2,21 +2,21 @@ package marcosg.pucmm.edu.services;
 
 import marcosg.pucmm.edu.objects.Product;
 import marcosg.pucmm.edu.objects.User;
+import marcosg.pucmm.edu.utils.AppRoles;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class ApiServices {
+public class ApiService {
 
-    private static ApiServices instance;
+    private static ApiService instance;
     private List<User> users = new ArrayList<>();
     private List<Product> products = new ArrayList<>();
+    private String loggedAs;
 
     /*
     * Private constructor
     * */
-    private ApiServices() {
-        System.out.println("----- service initialization ok! -----");
+    private ApiService() {
     }
 
     /*
@@ -26,11 +26,15 @@ public class ApiServices {
         return new User(username, username, password);
     }
 
+    public User findUser(User u) {
+        return null;
+    }
+
     /*
     * Getters
     * */
 
-    public static ApiServices getInstance() {
+    public static ApiService getInstance() {
         return instance;
     }
 

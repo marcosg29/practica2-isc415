@@ -6,16 +6,23 @@ plugins {
 group 'marcosg.pucmm.edu'
 version '1.0-SNAPSHOT'
 
-mainClassName = 'marcosg.pucmm.edu.Main'
-
 repositories {
     mavenCentral()
 }
 
+mainClassName = 'marcosg.pucmm.edu.Main'
+
 dependencies {
+    // Javalin dependency
     implementation 'io.javalin:javalin:3.13.7'
-    implementation group: 'org.webjars', name: 'bootstrap', version: '5.0.1'
+    // Log handler
     implementation 'org.slf4j:slf4j-simple:1.7.30'
+    // JSON handler
+    compile "com.fasterxml.jackson.core:jackson-databind:2.10.1"
+    // OpenAPI3 dependency
+    compile "io.javalin:javalin-openapi:3.9.1"
+    // Jetty dependency
+    compile group: 'org.eclipse.jetty', name: 'jetty-http-spi', version: '9.4.30.v20200611'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
